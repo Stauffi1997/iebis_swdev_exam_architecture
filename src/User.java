@@ -1,4 +1,10 @@
-public class User {
+public class User implements Subscriber {
+
+    @Override
+    public void update(Object object) {
+        Episode episode = (Episode) object;
+        System.out.println(name + ", the episode " + episode.getName() + " from the TV show " + episode.getShow() + " is available " );
+    }
 
     enum Gender {Male, Female};
     String name;
@@ -18,4 +24,5 @@ public class User {
         this.zipCode = zipCode;
         this.gender = gender;
     }
+
 }
